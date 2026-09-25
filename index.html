@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jevline™ — The Typed Decision Playbook</title>
+<meta name="description" content="Give your software a typed judgment it can be trusted with. The 8-part system for shipping TypeSafe Jev decisions — asked right, calibrated, gated, and logged. $19 founder price.">
+<style>
+  :root{
+    --bg:#07090f; --panel:#0e1320; --panel2:#111930; --line:#1f2a44;
+    --txt:#eaf0fb; --dim:#94a3c0; --accent:#5b8cff; --accent2:#22d3ee;
+    --good:#34d399; --bad:#f87171; --gold:#f5c451;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px}
+  .mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
+  a{color:var(--accent2)}
+  /* header */
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(7,9,15,.92);backdrop-filter:blur(8px);z-index:50}
+  .logo{font-size:19px;font-weight:800;letter-spacing:-.3px}
+  .logo b{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .logo-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent2);margin-right:2px;vertical-align:middle;box-shadow:0 0 10px var(--accent2)}
+  .tag{color:var(--dim);font-size:12.5px;margin-top:2px}
+  /* hero */
+  .hero{padding:66px 0 54px;text-align:left}
+  .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent2);border:1px solid rgba(34,211,238,.3);padding:5px 12px;border-radius:100px;margin-bottom:22px}
+  h1{font-size:clamp(30px,5.2vw,52px);line-height:1.07;letter-spacing:-1.4px;font-weight:800}
+  h1 .g{background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .h1b{display:block;margin-top:12px;font-size:clamp(19px,3.1vw,27px);font-weight:600;color:var(--txt);letter-spacing:-.4px;line-height:1.3}
+  .h1c{display:block;margin-top:16px;font-size:clamp(16px,2.5vw,20px);font-weight:400;color:var(--dim);line-height:1.5;max-width:660px}
+  .cta{display:inline-block;background:linear-gradient(135deg,var(--accent),#3b6fe0);color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:17px 36px;border-radius:12px;box-shadow:0 10px 34px rgba(91,140,255,.34);transition:.15s;letter-spacing:-.2px}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 14px 42px rgba(91,140,255,.46)}
+  .cta.sm{font-size:15px;padding:14px 28px}
+  .cta-block{margin:30px 0 14px}
+  .micro{color:var(--dim);font-size:13.5px}
+  .micro b{color:var(--good)}
+  .proofline{margin-top:26px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--dim)}
+  .proofline b{color:var(--txt)}
+  /* sections */
+  section{padding:52px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(23px,3.6vw,34px);letter-spacing:-.9px;line-height:1.15;font-weight:800;margin-bottom:18px}
+  h2 .g{color:var(--accent2)}
+  h3{font-size:18px;margin:26px 0 8px;letter-spacing:-.3px}
+  p{margin:14px 0;color:#d3dcf0;font-size:16.5px}
+  p.lead{font-size:18.5px;color:var(--txt)}
+  ul,ol{margin:14px 0 14px 22px;color:#d3dcf0;font-size:16.5px}
+  li{margin:9px 0}
+  .dim{color:var(--dim)}
+  strong{color:#fff}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:20px 0}
+  .grid{display:grid;gap:14px}
+  @media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+  .item{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .item .n{display:inline-block;font-family:ui-monospace,monospace;font-size:12px;font-weight:700;color:var(--accent2);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.22);border-radius:8px;padding:3px 9px;margin-bottom:10px}
+  .item h3{margin:0 0 6px;font-size:16.5px}
+  .item p{font-size:14.5px;color:var(--dim);margin:0}
+  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px}
+  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line)}
+  th{color:var(--accent2);font-size:13px;text-transform:uppercase;letter-spacing:.6px;font-weight:700}
+  td{color:#d3dcf0}
+  .loop{font-family:ui-monospace,monospace;font-size:clamp(14px,2.6vw,20px);font-weight:700;color:var(--accent2);text-align:center;padding:22px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;letter-spacing:.5px;margin:22px 0}
+  .price{text-align:center;background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:20px;padding:40px 30px;margin:24px 0}
+  .price .old{color:var(--dim);text-decoration:line-through;font-size:19px}
+  .price .now{font-size:56px;font-weight:800;letter-spacing:-2px;margin:6px 0}
+  .price .now span{font-size:22px;font-weight:600;color:var(--dim);letter-spacing:0}
+  .guar{display:inline-block;margin-top:16px;font-size:13.5px;color:var(--good);border:1px dashed rgba(52,211,153,.4);border-radius:10px;padding:9px 16px}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:11px 0}
+  summary{cursor:pointer;font-weight:700;font-size:16.5px;color:var(--txt)}
+  details p{color:var(--dim);font-size:15px;margin-top:12px}
+  blockquote{border-left:3px solid var(--accent);padding:6px 0 6px 20px;margin:20px 0;color:var(--dim);font-style:italic;font-size:17px}
+  .final{text-align:center;padding:64px 0}
+  .final .cta{margin-top:26px}
+  footer{padding:36px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13px;text-align:center;line-height:1.8}
+  .badge{display:inline-block;background:rgba(91,140,255,.12);color:#9fb8ff;font-size:12px;font-weight:700;padding:4px 11px;border-radius:100px;border:1px solid rgba(91,140,255,.24);margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo"><span class="logo-dot"></span>Jev<b>line</b>™</div>
+    <div class="tag">The Typed Decision Playbook — for builders shipping TypeSafe Jev</div>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <span class="kicker">⚠️ The Jev gold rush has a silent failure mode</span>
+  <h1>
+    Your model can <span class="g">decide.</span> Can you <span class="g">trust</span> the decision?
+    <span class="h1b">Everyone is wiring typed decisions into production. Almost nobody is calibrating, gating, or logging them.</span>
+    <span class="h1c">Jevline™ is the 8-part discipline that turns "we tried Jev" into a decision layer you can test, price, and defend. Ask facts. Shape answers. Calibrate the threshold. Gate the action.</span>
+  </h1>
+
+  <div class="cta-block">
+    <a class="cta" href="#get" data-paylink>Get The Typed Decision Playbook — $19</a>
+  </div>
+  <div class="micro">Instant download · 8 PDFs · <b>60-day "Peace of Mind" guarantee</b> — keep everything either way</div>
+
+  <div class="proofline">
+    <b>The wave is real:</b> in a single week the ecosystem went from one launch post to <b>900+ listed projects</b> — and the community's own catalogs opened with a warning: <i>"curation is not endorsement … several repositories published together by one author, sharing a scaffold and a thin commit history, can satisfy every inclusion rule and still be unproven."</i>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>You don't have a knowledge problem. You have a <span class="g">decision</span> problem.</h2>
+    <p class="lead">Your timeline is full of Jev. Sub-15ms decisions, 5–10× faster browser agents, "Jev replaced my classifier." You've got the idea. What you don't have is the answer to four questions that decide whether this ships or sinks:</p>
+    <ul>
+      <li>Should this step be <strong>code</strong>, a <strong>typed decision</strong>, or a <strong>text LLM</strong>?</li>
+      <li>Which answer shape — <strong>Noul</strong>, <strong>Choice</strong>, or <strong>Score</strong> — fits <em>this</em> question?</li>
+      <li>What threshold routes automatically, and what goes to a human?</li>
+      <li>What happens when the model is <strong>wrong but confident</strong> — and it acts anyway?</li>
+    </ul>
+    <p>Copy-paste a quick-start example and you get a demo. That demo works in the README and rots in production, because the fuzzy part was never the model. It was everything <em>around</em> it — the question, the threshold, the escape hatch, the log.</p>
+  </div>
+</section>
+
+<section style="background:var(--panel2);">
+  <div class="wrap">
+    <h2>The core shift: a decision is not a prompt. It's a <span class="g">contract.</span></h2>
+    <p>A text LLM returns prose. Your code then has to <em>guess</em> whether the prose means yes — string matching, `if "refund" in reply`, silent failures. That guessing layer is where AI features quietly die.</p>
+    <p>A <strong>typed decision</strong> inverts it. Unstructured state in, a <strong>typed answer</strong> out — a choice from your named set, a score on your rubric, a probability. Your code doesn't parse it. Your code <strong>compares</strong> it. And every answer comes with confidence attached.</p>
+    <table>
+      <tr><th>With free text</th><th>With a typed decision</th></tr>
+      <tr><td class="mono">if "probably" in reply</td><td class="mono">if d.p[choice] &gt;= threshold</td></tr>
+      <tr><td>No confidence signal</td><td>Probability on every option</td></tr>
+      <tr><td>Untestable</td><td>Labelled cases, pass/fail gate</td></tr>
+      <tr><td>"It felt right"</td><td>A measured error + abstention rate</td></tr>
+      <tr><td>Silent drift</td><td>Thresholds in version control</td></tr>
+    </table>
+    <blockquote>A typed decision is a function contract for judgment. Unstructured state in, bounded answer out, with confidence attached.</blockquote>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The JEVLINE Loop™ — the operating spine</h2>
+    <p>Everything in this system is one of four steps. Memorize it.</p>
+    <div class="loop">ASK&nbsp;→&nbsp;SHAPE&nbsp;→&nbsp;CALIBRATE&nbsp;→&nbsp;GATE</div>
+    <div class="grid two">
+      <div class="item"><span class="n">A</span><h3>ASK</h3><p>One narrow, independent question — never the mega-question. Ask <em>facts</em>, not decisions.</p></div>
+      <div class="item"><span class="n">S</span><h3>SHAPE</h3><p>Pick the answer shape your code can consume: Noul for gates, Choice for routers, Score for ranking.</p></div>
+      <div class="item"><span class="n">C</span><h3>CALIBRATE</h3><p>Sweep the threshold on your own labelled cases. A threshold you haven't plotted is one you don't own.</p></div>
+      <div class="item"><span class="n">G</span><h3>GATE</h3><p>ALLOW / REVIEW / REFUSE in code — never a bare yes/no. When in doubt, do the reversible thing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--panel2);">
+  <div class="wrap">
+    <h2>The three ingredients of a <span class="g">confident mistake</span></h2>
+    <p>A wrong decision is a bug. A <em>confident</em> wrong decision wired to an irreversible action is an incident. Every decision-layer blow-up needs all three — remove any one and it becomes a log line instead of an outage:</p>
+    <div class="grid">
+      <div class="item"><h3>1 · Uncalibrated threshold</h3><p>The number 0.9 was a teaching example in someone else's README. Half your auto-routes are wrong.</p></div>
+      <div class="item"><h3>2 · No review path</h3><p>The only outcomes are auto-allow and crash. There's nowhere for "I'm unsure" to go.</p></div>
+      <div class="item"><h3>3 · Action-mapping error</h3><p>The label was right, the action was wrong. Independent gate studies keep finding this is the #1 source of bad decisions — and almost nobody tests it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What you get: <span class="g">8 deliverables</span>, one discipline</h2>
+    <div class="grid two">
+      <div class="item"><span class="n">01</span><h3>The Typed Decision Playbook™</h3><p>The core guide — the ASK→SHAPE→CALIBRATE→GATE loop, the three ingredients of a confident mistake, and the 30-minute quick start.</p></div>
+      <div class="item"><span class="n">02</span><h3>The Question Shaper™ + Primitive Selector</h3><p>Turn messy intent into a typed question. Noul / Choice / Score decision table, question cards, state hygiene.</p></div>
+      <div class="item"><span class="n">03</span><h3>The Threshold Calibration Kit™</h3><p>Freeze the decisions, sweep the threshold, plot the curve, quote the holdout. Policy file template included.</p></div>
+      <div class="item"><span class="n">04</span><h3>Abstention &amp; Escalation Design™</h3><p>ALLOW / REVIEW / REFUSE. No-match options, evidence gates, ranked review queues, the untrusted-input gate.</p></div>
+      <div class="item"><span class="n">05</span><h3>The Cascade &amp; Cost Blueprint™</h3><p>Cheap judgment first, expensive thinking second. The four tests a cascade must pass, cost model, and the money-leak meter.</p></div>
+      <div class="item"><span class="n">06</span><h3>The Decision Ledger™ + Drift Watch</h3><p>Seven minimum fields. The weekly review. Three drift signals to alert on. Your silent failure rate, finally visible.</p></div>
+      <div class="item"><span class="n">07</span><h3>The Failure-Mode Playbook™</h3><p>Seven ways typed decisions break — mega-question to silent drift — with the exact fix and the test that proves it.</p></div>
+      <div class="item"><span class="n">08</span><h3>The 30-Day Rollout Playbook™</h3><p>One step → an owned decision layer in four weekends, with gates you must pass and the adoption order that keeps you safe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--panel2);">
+  <div class="wrap">
+    <h2>Who this is for</h2>
+    <p>You're shipping (or about to ship) typed decisions into real code:</p>
+    <ul>
+      <li><strong>Agent builders</strong> using Jev for routing, guardrails, verification, or tool selection.</li>
+      <li><strong>Platform engineers</strong> replacing brittle classifiers and `if string.includes()` checks.</li>
+      <li><strong>Founders</strong> who need to know the AI feature is safe <em>before</em> a customer finds out it isn't.</li>
+      <li><strong>Anyone staring at 900 awesome-lists</strong> and wondering which patterns are proven and which are unverified scaffolds.</li>
+    </ul>
+    <p class="dim">Not for you if you want a prompt pack or a "10 Jev tricks" listicle. This is engineering discipline, not tips.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Objections, answered straight</h2>
+    <details><summary>"Can't I just read the docs and the awesome lists?"</summary><p>You can read <em>what Jev is</em>. The docs teach the primitives. What they don't hand you is the operating discipline: how to pick a threshold you can defend, how to keep abstention useful, when a cascade actually pays, and how to catch drift. That's the gap this fills — and the awesome lists themselves caution that many projects are unproven.</p></details>
+    <details><summary>"My step is simple. Does this even apply?"</summary><p>Simple steps are where this pays fastest. Replace one string-match with one Noul question, calibrate it in an afternoon, and you've removed a whole class of silent failure — with a number to prove it.</p></details>
+    <details><summary>"I don't use TypeSafe specifically."</summary><p>The discipline is model-agnostic. The ASK→SHAPE→CALIBRATE→GATE loop applies to any typed-decision interface, including open ports and drop-in alternatives. The principles — abstention, calibration, gates, ledgers — don't care whose endpoint answers.</p></details>
+    <details><summary>"Is this a security audit or legal advice?"</summary><p>No. It's practical engineering guidance on designing, calibrating, and monitoring decision layers. It won't certify your system; it will make it testable and observable.</p></details>
+    <details><summary>"Will this be out of date in a month?"</summary><p>The model names will move. The loop won't. Sweep-your-threshold, log-every-decision, gate-the-irreversible-action are permanent practices, not version-specific tricks.</p></details>
+    <details><summary>"What if it's not for me?"</summary><p>60-day, no-questions-asked refund. Keep the PDFs either way. You risk nothing but the reading time.</p></details>
+  </div>
+</section>
+
+<section style="background:var(--panel2);" id="get">
+  <div class="wrap">
+    <div class="price">
+      <span class="badge">Founder pricing — deluxe anchor $196</span>
+      <div class="old">$196</div>
+      <div class="now">$19<span> today</span></div>
+      <p class="dim" style="margin-top:6px">8 professional PDFs · instant access · lifetime updates to this edition</p>
+      <div class="cta-block" style="margin-bottom:8px">
+        <a class="cta" href="#" data-paylink>Get Instant Access — $19</a>
+      </div>
+      <div class="micro">Secure checkout via Stripe · access code emailed instantly</div>
+      <div class="guar">🛡️ 60-day "Peace of Mind" guarantee — keep everything either way</div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">The 30-minute quick start</h3>
+      <ol>
+        <li>Pick <strong>one</strong> branching step doing a string match.</li>
+        <li>Write the <strong>state</strong> and <strong>one Noul question</strong> your code can branch on.</li>
+        <li>Call it once and <strong>log the probability</strong> — wire nothing yet.</li>
+        <li>Label ten real cases. Check what a 0.9 threshold would have done.</li>
+        <li>Only then add the gate: <strong>allow / review / refuse</strong>.</li>
+      </ol>
+      <p class="dim" style="margin-bottom:0">That's a real decision layer. Everything else is refinement.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final wrap">
+  <h2>Your LLM writes the words.<br>A typed decision gives it a <span class="g">judgment.</span></h2>
+  <p class="lead">One you can test, price, and trust.</p>
+  <a class="cta" href="#" data-paylink>Get The Typed Decision Playbook — $19</a>
+  <p class="micro" style="margin-top:16px">Instant download · 8 PDFs · 60-day guarantee</p>
+  <p class="dim" style="margin-top:26px;font-size:20px"><strong>Don't ship a vibe. Ship a verdict.</strong></p>
+</section>
+
+<footer>
+  <div class="wrap">
+    Jevline™ · The Typed Decision Playbook™ — practical engineering guidance on designing, calibrating,<br>
+    and monitoring typed decision layers. Not a security audit, legal advice, or a warranty of safety.<br>
+    Not affiliated with or endorsed by TypeSafe AI. · © 2026 Jevline · All rights reserved.
+  </div>
+</footer>
+
+<script>
+  // Wire every CTA to the Stripe payment link (set at deploy time).
+  (function(){
+    var PAYLINK = document.querySelector('[data-paylink]');
+    var url = PAYLINK ? PAYLINK.getAttribute('href') : '#';
+    if (!url || url === '#') return;
+    document.querySelectorAll('[data-paylink]').forEach(function(a){ a.setAttribute('href', url); });
+  })();
+</script>
+</body>
+</html>

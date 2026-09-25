@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jevline™ — Your Downloads</title>
+<style>
+  :root { --bg:#07090f; --panel:#0e1320; --line:#1f2a44; --txt:#eaf0fb; --dim:#94a3c0; --accent:#5b8cff; --good:#34d399; --bad:#f87171; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:'Segoe UI',system-ui,sans-serif; min-height:100vh; }
+  .wrap { max-width:800px; margin:0 auto; padding:40px 20px 80px; }
+  .logo { font-size:22px; font-weight:700; margin-bottom:6px; }
+  .logo span { color:var(--accent); }
+  .sub { color:var(--dim); font-size:14px; margin-bottom:32px; }
+  .gate { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; margin-bottom:28px; }
+  .gate h2 { font-size:18px; margin-bottom:8px; }
+  .gate p { color:var(--dim); font-size:13px; margin-bottom:18px; }
+  input { width:100%; background:var(--bg); border:1px solid var(--line); color:var(--txt); padding:12px 14px; border-radius:8px; font-size:15px; margin-bottom:12px; }
+  .btn { background:var(--accent); color:#03132e; border:none; padding:12px 20px; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; width:100%; }
+  .btn:hover { filter:brightness(1.1); }
+  .err { color:var(--bad); font-size:13px; margin-top:10px; min-height:18px; }
+  .locked { display:none; }
+  .files { display:grid; gap:12px; }
+  .file { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .file h3 { font-size:15px; margin-bottom:3px; }
+  .file p { color:var(--dim); font-size:12.5px; line-height:1.45; }
+  .file .btn { width:auto; padding:9px 16px; font-size:12.5px; flex-shrink:0; }
+  .badge { display:inline-block; background:rgba(74,222,128,0.12); color:var(--good); font-size:11px; padding:2px 10px; border-radius:12px; font-weight:600; margin-bottom:6px; }
+  footer { margin-top:40px; text-align:center; color:var(--dim); font-size:12px; }
+  .start { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:16px; }
+  .start h3 { font-size:16px; margin-bottom:8px; }
+  .start ol { padding-left:20px; color:var(--dim); font-size:13.5px; line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">⚡ Jev<span style="color:#22d3ee">line</span>™</div>
+  <div class="sub">The Typed Decision Playbook™ — your member downloads</div>
+
+  <div id="gateBox" class="gate">
+    <h2>🔐 Unlock your downloads</h2>
+    <p>Enter the email you purchased with and your personal access code (sent in your order confirmation email).</p>
+    <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
+    <input id="code" type="text" placeholder="JL-XXXXX-XXXXX" autocomplete="off">
+    <button class="btn" onclick="unlock()">Unlock →</button>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div id="memberArea" class="locked">
+    <div class="start">
+      <span class="badge">✅ Unlocked</span>
+      <h3>Start here — the ASK→SHAPE→CALIBRATE→GATE loop</h3>
+      <ol>
+        <li><b>ASK + SHAPE:</b> pick ONE branching step doing a string match; write the state and one Noul question (deliverable 2)</li>
+        <li><b>CALIBRATE:</b> freeze the decisions, sweep the threshold, quote the holdout number (deliverable 3)</li>
+        <li><b>GATE:</b> add ALLOW / REVIEW / REFUSE in code, then log every decision (deliverables 4 and 6)</li>
+      </ol>
+    <div class="files">
+      <div class="file">
+        <div><h3>📘 1. The Typed Decision Playbook™</h3><p>The core guide — the ASK→SHAPE→CALIBRATE→GATE loop, the three ingredients of a confident mistake, and the 30-minute quick start. Start here.</p></div>
+        <button class="btn" onclick="dl('01-typed-decision-playbook.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🧩 2. The Question Shaper™ + Primitive Selector</h3><p>Turn messy intent into a typed question. The Noul / Choice / Score decision table, question cards, one-state-many-questions, state hygiene.</p></div>
+        <button class="btn" onclick="dl('02-question-shaper-primitive-selector.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🎯 3. The Threshold Calibration Kit™</h3><p>Freeze the decisions, sweep the threshold, plot false-auto-route vs review load, and quote the holdout. Includes a policy-file template.</p></div>
+        <button class="btn" onclick="dl('03-threshold-calibration-kit.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🚦 4. Abstention & Escalation Design™</h3><p>ALLOW / REVIEW / REFUSE — never a bare yes/no. No-match options, evidence gates, ranked review queues, the untrusted-input gate.</p></div>
+        <button class="btn" onclick="dl('04-abstention-escalation-design.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>📉 5. The Cascade & Cost Blueprint™</h3><p>Cheap judgment first, expensive thinking second. The four tests a cascade must pass, the cost model, and the escalated-but-unchanged money-leak meter.</p></div>
+        <button class="btn" onclick="dl('05-cascade-cost-blueprint.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>📊 6. The Decision Ledger™ + Drift Watch</h3><p>The seven minimum fields. The weekly review. Three drift signals to alert on. Your silent failure rate — finally visible.</p></div>
+        <button class="btn" onclick="dl('06-decision-ledger-drift-watch.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🛠️ 7. The Failure-Mode Playbook™</h3><p>Seven ways typed decisions break — mega-question to silent drift — each with the exact fix and the test that proves the fix worked.</p></div>
+        <button class="btn" onclick="dl('07-failure-mode-playbook.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🚀 8. The 30-Day Rollout Playbook™</h3><p>From one hard-coded if to an owned decision layer in four weekends, with gates you must pass and the adoption order that keeps you safe.</p></div>
+        <button class="btn" onclick="dl('08-30-day-rollout-playbook.pdf', this)">Download</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>Jevline™ · practical engineering guidance on typed decision layers · not a security audit or legal advice</footer>
+</div>
+
+<script>
+function unlock() {
+  const email = document.getElementById('email').value.trim();
+  const code = document.getElementById('code').value.trim();
+  const err = document.getElementById('err');
+  if (!email || !code) { err.textContent = 'Please enter both email and access code.'; return; }
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code }) })
+    .then(r => r.json())
+    .then(d => {
+      if (d.ok) {
+        sessionStorage.setItem('jl_email', email);
+        sessionStorage.setItem('jl_code', code);
+        document.getElementById('gateBox').style.display = 'none';
+        document.getElementById('memberArea').classList.remove('locked');
+        document.getElementById('memberArea').style.display = 'block';
+        err.textContent = '';
+      } else {
+        err.textContent = d.error || 'Access denied. Check your code and email.';
+      }
+    })
+    .catch(() => { err.textContent = 'Network error — try again.'; });
+}
+
+function dl(file, btn) {
+  const email = sessionStorage.getItem('jl_email');
+  const code = sessionStorage.getItem('jl_code');
+  if (!email || !code) { alert('Session expired — please unlock again.'); location.reload(); return; }
+  const orig = btn.textContent;
+  btn.textContent = '⏳ …';
+  btn.disabled = true;
+  fetch('/api/download', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code, file }) })
+    .then(async r => {
+      if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || 'Download failed (' + r.status + ')'); }
+      const blob = await r.blob();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = file;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      btn.textContent = '✅ Sent';
+    })
+    .catch(e => { alert(e.message); btn.textContent = orig; })
+    .finally(() => { btn.disabled = false; setTimeout(() => { if (btn.textContent === '✅ Sent') btn.textContent = orig; }, 2500); });
+}
+
+// auto-unlock if already verified this session
+const em = sessionStorage.getItem('jl_email');
+const ec = sessionStorage.getItem('jl_code');
+if (em && ec) {
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, code: ec }) })
+    .then(r => r.json())
+    .then(d => { if (d.ok) { document.getElementById('gateBox').style.display = 'none'; document.getElementById('memberArea').classList.remove('locked'); document.getElementById('memberArea').style.display = 'block'; } });
+}
+document.getElementById('code').addEventListener('keydown', (e) => { if (e.key === 'Enter') unlock(); });
+</script>
+</body>
+</html>
